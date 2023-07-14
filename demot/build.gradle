@@ -2,7 +2,18 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.1'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id 'org.flywaydb.flyway' version '7.0.4'
 }
+flyway {
+
+	url = "jdbc:postgresql://localhost:5432/course"
+
+	user = "postgres"
+
+	password = "123456"
+
+}
+
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -26,7 +37,7 @@ dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.flywaydb:flyway-core:7.0.4'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
